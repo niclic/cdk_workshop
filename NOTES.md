@@ -62,3 +62,24 @@ cdk deploy
 curl -i https://1rapjixz04.execute-api.ca-central-1.amazonaws.com/prod/hello/world
 
 ```
+
+## Construct Libraries
+
+```sh
+pip install cdk-dynamo-table-view==0.2.0
+
+cdk diff
+
+cdk deploy
+
+https://3x5akbsb79.execute-api.ca-central-1.amazonaws.com/prod/
+
+```
+
+## Cleanup
+
+```sh
+
+cdk destroy
+
+```
