@@ -45,4 +45,20 @@ cdk deploy
 mkdir lambda
 touch lambda/hello.py
 
+cdk diff
+
+cdk deploy
+
+# repeat for apigw
+
+```
+
+## Writing Constructs
+
+```sh
+
+cdk deploy
+
+curl -i https://1rapjixz04.execute-api.ca-central-1.amazonaws.com/prod/hello/world
+
 ```
