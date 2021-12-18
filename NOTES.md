@@ -83,3 +83,11 @@ https://3x5akbsb79.execute-api.ca-central-1.amazonaws.com/prod/
 cdk destroy
 
 ```
+
+## Testing Constructs
+
+```sh
+pip install -r requirements-dev.txt
+
+
+```

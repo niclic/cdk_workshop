@@ -14,12 +14,17 @@ class HitCounter(Construct):
     def table(self):
         return self._table
 
-    def __init__(self, scope: Construct, id: str, downstream: _lambda.IFunction, **kwargs):
+    def __init__(self, scope: Construct, id: str, downstream: _lambda.IFunction, read_capacity: int = 5, **kwargs):
         super().__init__(scope, id, **kwargs)
+
+        if read_capacity < 5 or read_capacity > 20:
+                raise ValueError("readCapacity must be greater than 5 or less than 20")
 
         self._table = ddb.Table(
             self, 'Hits', 
-            partition_key={'name': 'path', 'type': ddb.AttributeType.STRING}
+            partition_key={'name': 'path', 'type': ddb.AttributeType.STRING},
+            encryption=ddb.TableEncryption.AWS_MANAGED,
+            read_capacity=read_capacity,
         )
 
         self._handler = _lambda.Function(
