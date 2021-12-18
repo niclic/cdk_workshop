@@ -91,3 +91,11 @@ pip install -r requirements-dev.txt
 
 
 ```
+
+## CDK Pipelines
+
+```sh
+
+cdk deploy
+
+```
