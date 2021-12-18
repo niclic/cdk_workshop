@@ -5,7 +5,7 @@ from aws_cdk import (
     pipelines as pipelines,
 
 )
-# from pipeline_stage import WorkshopPipelineStage
+from pipeline_stage import WorkshopPipelineStage
 
 class WorkshopPipelineStack(Stack):
 
@@ -32,3 +32,6 @@ class WorkshopPipelineStack(Stack):
                 ]
             ),
         )
+
+        deploy = WorkshopPipelineStage(self, "Deploy")
+        deploy_stage = pipeline.add_stage(deploy)
