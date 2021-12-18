@@ -19,5 +19,5 @@ class WorkshopPipelineStage(Stage):
 
         service = CdkWorkshopStack(self, 'WebService')
 
-        self._hc_enpdoint = service.hc_endpoint
+        self._hc_endpoint = service.hc_endpoint
         self._hc_viewer_url = service.hc_viewer_url
